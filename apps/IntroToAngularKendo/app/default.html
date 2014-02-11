@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <title>Adding Kendo UI to a Web Page</title>
+        
+        <link href="css/kendo.common.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/kendo.default.min.css" rel="stylesheet" type="text/css"/>
+    </head>
+<body ng-controller="HomeCtrl">
+    <span>
+        Pick a Date:
+        <input kendo-date-picker type="text"/>
+    </span>
+    
+    <div>
+        <span>
+            <select kendo-drop-down-list
+                    k-options="thingsOptions"
+                    k-on-change="thingsChange(kendoEvent)"
+                    ng-model="selectedThing">
+            </select>
+            <h5>Selected: {{selectedThing}}</h5>
+        </span>
+    </div>
+    <button kendo-button ng-click="window.open()">Open Modal</button>
+    <div kendo-window="modal" k-title="'Sample Window'" k-visible="false" k-modal="true"></div>
+
+    <script src="lib/kendoui/jquery.min.js" type="text/javascript"></script>
+    <script src="lib/kendoui/kendo.all.min.js" type="text/javascript"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-kendo/angular-kendo.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/HomeCtrl.js"></script>
+</body>
+</html>
